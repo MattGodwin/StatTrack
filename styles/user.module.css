@@ -1,0 +1,22 @@
+.search {
+    font-size: medium;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.button {
+    font-size: medium;
+    margin: 10px;
+    color: #fff;
+    padding: 10px;
+    background-color: rgb(73,148,228);
+    border: none;
+    border-radius: 10px;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  color: #eaeaea;
+}
