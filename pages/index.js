@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import User from './user';
+import Search from './search';
+import User from './user'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
           Enter Your Username To Get Started
         </p>
 
-        <User />
+        <Search />
 
         <div>
 
