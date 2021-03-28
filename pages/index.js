@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import FindStats from './search';
-import User from './user'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,11 +12,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://enmatt.xyz">StatTrack!</a>
+          Welcome to <a href="">StatTrack!</a>
         </h1>
 
         <p className={styles.description}>
-          Enter Your Username To Get Started
+          Enter your username to see your Hypixel stats.
         </p>
 
         <FindStats />
