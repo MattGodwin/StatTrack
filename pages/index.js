@@ -31,13 +31,13 @@ export default function Home() {
             <p>Learn about who we are and our journey.</p>
           </a>
 
-          <a href="" className={styles.card}>
+          <a href="https://github.com/MattGodwin" className={styles.card}>
             <h3>More &rarr;</h3>
             <p>Take a look at some of our other projects.</p>
           </a>
 
           <a
-            href=""
+            href="https://discord.gg/Qj6eTWS"
             className={styles.card}
           >
             <h3>Discord &rarr;</h3>
@@ -45,7 +45,7 @@ export default function Home() {
           </a>
 
           <a
-            href=""
+            href="https://ko-fi.com/enmatt"
             className={styles.card}
           >
             <h3>Donate &rarr;</h3>
