@@ -22,12 +22,10 @@ class FindStats extends React.Component {
     }
 
     async handleSubmit(event) {
-        console.log('A name was submitted: ' + this.state.value);
         event.preventDefault();
         const response = await axios.get("https://api.minetools.eu/uuid/" + this.state.value);
         const hyResponse = await axios.get("https://api.hypixel.net/player",
             { params: { key: '3e530656-095b-4e8e-b778-b6fde39f0e92', uuid: response.data.id } })
-        console.log(hyResponse)
         this.setState({
             uuid: response.data.id,
             name: response.data.name,
@@ -38,7 +36,14 @@ class FindStats extends React.Component {
             bedWarsWins: hyResponse.data.player.achievements.bedwars_wins,
             bedWarsLosses: hyResponse.data.player.stats.Bedwars.eight_one_losses_bedwars,
             bedWarsKills: hyResponse.data.player.stats.Bedwars.eight_one_kills_bedwars,
-            bedWarsDeaths: hyResponse.data.player.stats.Bedwars.eight_one_deaths_bedwars
+            bedWarsDeaths: hyResponse.data.player.stats.Bedwars.eight_one_deaths_bedwars,
+            lastGame: hyResponse.data.player.mostRecentGameType,
+            bestDuelsWinStreak: hyResponse.data.player.stats.Duels.best_overall_winstreak,
+            duelsWins: hyResponse.data.player.stats.Duels.wins,
+            duelsLosses: hyResponse.data.player.stats.Duels.losses,
+            duelsKills: hyResponse.data.player.stats.Duels.kills,
+            duelsDeaths: hyResponse.data.player.stats.Duels.deaths,
+
         });
 
     }
@@ -78,6 +83,9 @@ class FindStats extends React.Component {
                         <p>
                             Karma - {this.state.karma}
                         </p>
+                        <p>
+                            Most Recent Game - {this.state.lastGame}
+                        </p>
 
                     </div>
                     <div className={styles.card}>
@@ -108,8 +116,23 @@ class FindStats extends React.Component {
                     <div className={styles.card}>
                         <p>
                             <h2>
-                                COMING SOON!!!
+                                Duels Stats
                             </h2>
+                        </p>
+                        <p>
+                            Total Wins - {this.state.duelsWins}
+                        </p>
+                        <p>
+                            Total Losses - {this.state.duelsLosses}
+                        </p>
+                        <p>
+                            Total Kills - {this.state.duelsKills}
+                        </p>
+                        <p>
+                            Total Deaths - {this.state.duelsDeaths}
+                        </p>
+                        <p>
+                            Best Win Streak - {this.state.bestDuelsWinStreak}
                         </p>
                     </div>
                     <div className={styles.card}>
