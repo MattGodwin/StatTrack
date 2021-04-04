@@ -26,6 +26,7 @@ class FindStats extends React.Component {
         const response = await axios.get("https://api.minetools.eu/uuid/" + this.state.value);
         const hyResponse = await axios.get("https://api.hypixel.net/player",
             { params: { key: '3e530656-095b-4e8e-b778-b6fde39f0e92', uuid: response.data.id } })
+
         this.setState({
             uuid: response.data.id,
             name: response.data.name,
@@ -165,4 +166,3 @@ class FindStats extends React.Component {
 
 
 export default FindStats;
-//3e530656-095b-4e8e-b778-b6fde39f0e92
